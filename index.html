@@ -848,16 +848,17 @@
         </div>
     </section>
 
-   <section id="interessen">
+  <section id="interessen">
     <div class="content-card">
         <h2 class="lang" data-de="Interessen & Leidenschaften" data-en="Interests & Passions" data-tr="İlgi Alanları & Hobiler">
             <i class="fas fa-heart"></i> Interessen & Leidenschaften
         </h2>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 20px;">
+        <!-- Flexbox mit Wrap & Zentrierung für perfekte Symmetrie (3 oben, 2 zentriert unten) -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
             
-            <!-- Hardware & Basteln -->
-            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+            <!-- Hardware & Modding -->
+            <div style="flex: 1 1 220px; max-width: 280px; text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
                 <i class="fas fa-microchip" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
                 <h4 class="lang" style="margin: 5px 0;" data-de="Hardware & Modding" data-en="Hardware & Modding" data-tr="Donanım & Modifikasyon">Hardware & Modding</h4>
                 <p class="lang" style="font-size: 0.8rem; color: var(--text);"
@@ -869,7 +870,7 @@
             </div>
 
             <!-- IT-Sicherheit -->
-            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+            <div style="flex: 1 1 220px; max-width: 280px; text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
                 <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
                 <h4 class="lang" style="margin: 5px 0;" data-de="IT-Sicherheit" data-en="IT Security" data-tr="Siber Güvenlik">IT-Sicherheit</h4>
                 <p class="lang" style="font-size: 0.8rem; color: var(--text);"
@@ -881,7 +882,7 @@
             </div>
 
             <!-- Kochen & Backen -->
-            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+            <div style="flex: 1 1 220px; max-width: 280px; text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
                 <i class="fas fa-utensils" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
                 <h4 class="lang" style="margin: 5px 0;" data-de="Kochen & Backen" data-en="Cooking & Baking" data-tr="Yemek Yapma & Hamur İşleri">Kochen & Backen</h4>
                 <p class="lang" style="font-size: 0.8rem; color: var(--text);"
@@ -893,7 +894,7 @@
             </div>
 
             <!-- Gaming -->
-            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+            <div style="flex: 1 1 220px; max-width: 280px; text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
                 <i class="fas fa-gamepad" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
                 <h4 class="lang" style="margin: 5px 0;" data-de="Gaming" data-en="Gaming" data-tr="Oyun (Gaming)">Gaming</h4>
                 <p class="lang" style="font-size: 0.8rem; color: var(--text);"
@@ -904,7 +905,8 @@
                 </p>
             </div>
 
-      <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+            <!-- Lesen -->
+            <div style="flex: 1 1 220px; max-width: 280px; text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
                 <i class="fas fa-book-open-reader" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
                 <h4 class="lang" style="margin: 5px 0;" data-de="Lesen" data-en="Reading" data-tr="Kitap Okuma">Lesen</h4>
                 <p class="lang" style="font-size: 0.8rem; color: var(--text);"
