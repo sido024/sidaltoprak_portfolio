@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Sidal Toprak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+   
+                    
+    <style>
+        :root {
+    --primary: #27ae60;
+    --bg: #dad6cf;
+    --bg2:#ddd6ca;
+    --card-bg:#ece8e0;
+    --radius-md:15px;
+    --radius-lg:20px;
+    --space-md:1.5rem;
+    --space-lg:2.5rem;
+    --shadow-soft:0 10px 30px rgba(0,0,0,0.5);
+
+    --text: #2f2f2f;
+    --text-light: #666666;
+
+    --border: #d2ccc3;
+}
+
+    body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    color: var(--text);
+
+    background:
+      linear-gradient(135deg,#E7E2DA,#DAD6CF);
+
+    
+    height: auto;
+    min-height:unset;
+    padding: 60px 0;
+
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+
+    
+
+        /* Sprach-Umschalter Style */
+        .lang-switcher {
+            position: fixed;
+            top: 15px;
+            right: 95px;
+            /* Platz lassen für den Menü-Button */
+            z-index: 1001;
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            background: rgba(46, 204, 113, 0.2);
+            border: 1px solid var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .lang-btn:hover {
+            background: var(--primary);
+            color: #1a1a2e;
+        }
+
+        /* Navigation */
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--primary);
+            color: #1a1a2e;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+        }
+
+       /* Navigation - Größere Version */
+.side-menu{
+    position: fixed;
+    top: 0; 
+    right: -90vw; 
+    width: 85vw; 
+    height: 100%;
+    background:rgba(239,235,227,97);
+    backdrop-filter:blur(18px);
+    transition: 0.4s ease-in-out;
+    z-index: 999;
+    padding-top: 100px; 
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+}
+
+.side-menu.active { 
+    right: 0; 
+}
+
+.side-menu a{
+    padding: 20px 35px;
+    text-decoration: none;
+    color:#2f2b27;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(46, 204, 113, 0.1);
+    transition: 0.3s;
+
+}
+
+
+/* Hover-Effekt für bessere Interaktion */
+.side-menu a:hover {
+    background: rgba(46, 204, 113, 0.1);
+   color: #333;
+   padding-left: 45px;
+}
+
+/* Der Menü-Button oben rechts auch etwas größer */
+.menu-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 1000;
+    background: #27ae60;
+    color:white;
+    padding: 15px; /* Button-Fläche vergrößert */
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    transform: scale(1.1); /* Button wird beim Drüberfahren leicht größer */
+}
+
+        /* Sektionen & Karten */
+        section {
+            min-height: auto; /*Höhe passt sich flexibel dem Inhalt an */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px; /* Abstände oben/unten */
+            box-sizing: border-box;
+        }
+
+        .content-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    width: 100%;
+    max-width: 900px;
+    min-height: 500px;
+    align-items: flex-start;
+    gap: 40px;
+
+    padding: 2.5rem;
+    border: 1px solid var(--primary);
+    border-radius:24px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+    color:var(--text);
+}
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        h1, h2 {
+            font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+            letter-spacing: 0.5px;
+            color: #1d1d1d;
+       }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
+
+       .skill-card{                       */Umschulung*/ 
+    background: #f4f1eb;
+    padding: 2.5rem;
+    width: 100%;
+    min-height: 150px;
+    max-width: 800px;
+    box-sizing: border-box;
+
+    border:1px solid var(--primary);
+    border-radius:18px;
+    color: #2f2f2f;
+    transition:0.3s ease;
+
+}
+
+.skill-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--primary);
+    box-shadow:0 15px 30px rgba(46,158,91,15);
+}
+
+        .timeline-item {
+            border-left: 2px solid var(--primary);
+            padding: 20px;
+            position: relative;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -9px;
+            top: 25px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .hero-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:40px 20px;
+}
+   .hero-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;   /* Bild oben rechts */
+    gap:40px;
+    width:100%;
+    max-width:900px;
+    overflow: hidden;
+}
+
+
+.hero-text {
+    flex:1;
+    min-width: 0;
+}
+
+.hero-image {
+    flex-shrink: 0;
+}
+
+.hero-image img {
+    width:220px;
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:24px;
+
+    border:3px solid var(--primary);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+        .badge {
+            background: rgba(39,174,96,0.12);
+            color: #218c4b;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(39,174,96,0.3);
+        }
+
+        .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 14px 28px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="changeLanguage('de')">DE</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="changeLanguage('tr')">TR</button>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars fa-lg"></i>
+    </div>
+
+    <nav class="side-menu" id="sideMenu">
+        <a href="#home" class="lang" data-de="Home" data-en="Home" data-tr="Ana Sayfa" onclick="toggleMenu()">Home</a>
+        <a href="#lebenslauf" class="lang" data-de="Lebenslauf" data-en="Resume" data-tr="Özgeçmiş" onclick="toggleMenu()">Lebenslauf</a>
+        <a href="#umschulung" class="lang" data-de="Qualifikation" data-en="Education" data-tr="Eğitim ve Nitelikler" onclick="toggleMenu()">Qualifikation</a>
+        <a href="#projekte" class="lang" data-de="Projekte" data-en="Projects" data-tr="Projeler" onclick="toggleMenu()">Projekte</a>
+        <a href="#interessen" class="lang" data-de="Interessen" data-en="Interests" data-tr="İlgi Alanları" onclick="toggleMenu()">Interessen</a>
+        <a href="#kontakt" class="lang" data-de="Kontakt" data-en="Contact" data-tr="İletişim" onclick="toggleMenu()">Kontakt</a>
+    </nav>
+
+  
+  <section id="Home" class="hero-section">
+    <div class="content-card hero-card" style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 30px; position: relative;">
+        
+        <!-- Linke Seite: Alle Texte & Buttons sauber untereinander -->
+        <div class="hero-text" style="flex: 1; min-width: 300px; position: relative;">
+            
+            <h1 style="text-transform: uppercase; margin-bottom: 5px;">
+                Sidal Toprak
+            </h1>
+
+            <p class="lang" style="font-size: 1.1rem; font-weight: 300; margin-bottom: 15px;"
+                data-de="Angehende Fachinformatikerin für Systemintegration"
+                data-en="Aspiring IT Specialist for System Integration"
+                data-tr="Sistem Entegrasyonu Alanında Uzman Bilgi İşlem Adayı">
+                Angehende Fachinformatikerin für Systemintegration
+            </p>
+
+            <div class="badges" style="margin-bottom: 15px;">
+                <span class="badge">INFRASTRUCTURE</span>
+                <span class="badge">NETWORKS</span>
+                <span class="badge">MONITORING</span>
+            </div>
+
+            <p class="lang" style="font-size: 0.95rem; color: var(--text); line-height: 1.6; margin-bottom: 20px;"
+                data-de="Auf dem Weg zum IHK-Abschluss im Sommer 2027: Ich kombiniere fundiertes Fachwissen mit praktischer Erfahrung aus dem KRZN, um Ihre IT-Infrastruktur ab Tag eins zuverlässig zu unterstützen."
+                data-en="On the way to my IHK degree in summer 2027: I combine sound specialist knowledge with practical experience from KRZN to reliably support your IT infrastructure from day one."
+                data-tr="Yaz 2027'deki IHK mezuniyetine doğru: IT altyapınızı ilk günden itibaren güvenle desteklemek için edindiğim kapsamlı teorik bilgiyi KRZN'deki pratik deneyimimle birleştiriyorum.">
+                Auf dem Weg zum IHK-Abschluss im Sommer 2027: Ich kombiniere fundiertes Fachwissen mit praktischer Erfahrung aus dem KRZN, um Ihre IT-Infrastruktur ab Tag eins zuverlässig zu unterstützen.
+            </p>
+
+            <!-- Rahmendaten (Info-Box) -->
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; color: var(--text); margin-bottom: 25px; background: rgba(0,0,0,0.03); padding: 12px 15px; border-radius: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-bullseye" style="color: var(--primary); width: 18px;"></i>
+                    <span><strong>Ziel:</strong> Junior Cloud & System Administrator | IT Consultant</span>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-laptop-house" style="color: var(--primary); width: 18px;"></i>
+                    <span>
+                        <strong>
+                            <span class="lang" data-de="Arbeitsort:" data-en="Location:" data-tr="Lokasyon:">Arbeitsort:</span>
+                        </strong> 
+                        <span class="lang" 
+                            data-de="Remote / Hybrid (bevorzugt Istanbul, weltweit offen)" 
+                            data-en="Remote / Hybrid (preferred Istanbul, open worldwide)" 
+                            data-tr="Uzaktan / Hibrit (Öncelik İstanbul, Dünya Geneli Açık)">
+                            Remote / Hybrid (bevorzugt Istanbul, weltweit offen)
+                        </span>
+                    </span>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-calendar-check" style="color: var(--primary); width: 18px;"></i>
+                    <span>
+                        <strong>
+                            <span class="lang" data-de="Verfügbar ab:" data-en="Available from:" data-tr="Müsaitlik:">Verfügbar ab:</span>
+                        </strong> 
+                        <span class="lang" 
+                            data-de="ca. August 2027 (nach mündlicher IHK-Prüfung)" 
+                            data-en="approx. August 2027 (upon passing oral exam)" 
+                            data-tr="Yaklaşık Ağustos 2027 (IHK sözlü sınavı sonrası)">
+                            ca. August 2027 (nach mündlicher IHK-Prüfung)
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Alle Buttons in einer Zeile unten links -->
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <!-- Kontaktieren -->
+                <a href="#kontakt" style="padding: 10px 18px; border-radius: 8px; border: 1px solid var(--primary); color: var(--text); text-decoration: none; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-envelope"></i>
+                    <span class="lang" data-de="Kontaktieren" data-en="Contact Me" data-tr="İletişime Geç">Kontaktieren</span>
+                </a>
+
+                <!-- Deutscher Lebenslauf -->
+                <a href="CV SIDAL TOPRAK .pdf" download class="btn-primary" 
+                   style="padding: 10px 18px; border-radius: 8px; background: var(--primary); color: #fff; text-decoration: none; font-weight: bold; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-file-download"></i>
+                    <span class="lang" data-de="Lebenslauf (DE)" data-en="CV (DE)" data-tr="Özgeçmiş (DE)">Lebenslauf (DE)</span>
+                </a>
+
+                <!-- Englischer Lebenslauf -->
+                <a href="CV SIDAL TOPRAK EN .pdf" download class="btn-primary" 
+                   style="padding: 10px 18px; border-radius: 8px; background: transparent; border: 2px solid var(--primary); color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-file-download"></i>
+                    <span class="lang" data-de="Lebenslauf (EN)" data-en="CV (EN)" data-tr="Özgeçmiş (EN)">Lebenslauf (EN)</span>
+                </a>
+            </div>
+
+        </div> <!-- Hier wurde .hero-text sauber geschlossen! -->
+
+        <!-- Rechte Seite: Foto (Oben Rechts ausgerichtet) -->
+        <div class="hero-image" style="flex-shrink: 0;">
+            <img src="Image (6).jpg" alt="Sidal Toprak" style="max-width: 280px; width: 100%; border-radius: 20px; object-fit: cover;">
+        </div>
+
+    </div>
+</section>
+
+<section id="schwerpunkte">
+    <div class="content-card">
+        <h2 class="lang" data-de="Technische Schwerpunkte" data-en="Technical Core Skills" data-tr="Teknik Uzmanlık Alanları"
+            style="color: var(--primary);">
+            Technische Schwerpunkte
+        </h2>
+
+        <div class="skills-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px;">
+
+            <!-- 1. Systems & Services -->
+            <div class="skill-card"
+                style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border: 1px solid rgba(46, 204, 113, 0.2); border-radius: 12px;">
+                <h3 class="lang" data-de="Betriebssysteme & Server" data-en="Operating Systems & Server" data-tr="İşletim Sistemleri ve Sunucu">Betriebssysteme & Server</h3>
+                <p>Windows Server (Active Directory, DNS/DHCP), Linux (Debian/Ubuntu), Client-Support (Win 10/11)</p>
+            </div>
+
+            <!-- 2. Networking -->
+            <div class="skill-card"
+                style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border: 1px solid rgba(46, 204, 113, 0.2); border-radius: 12px;">
+                <h3 class="lang" data-de="Netzwerktechnik" data-en="Networking" data-tr="Ağ Teknolojileri">Netzwerktechnik</h3>
+                <p>TCP/IP, Routing & Switching, Subnetting, <span class="lang" data-de="VPN-Konfiguration" data-en="VPN Configuration" data-tr="VPN Konfigürasyonu">VPN-Konfiguration</span></p>
+            </div>
+
+            <!-- 3. Security & Compliance -->
+            <div class="skill-card"
+                style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border: 1px solid rgba(46, 204, 113, 0.2); border-radius: 12px;">
+                <h3 class="lang" data-de="IT-Sicherheit & Datenschutz" data-en="IT Security & Privacy" data-tr="Bilişim Güvenliği ve Veri Koruma">IT-Sicherheit & Datenschutz</h3>
+                <p class="lang" 
+                   data-de="Informationssicherheit, DSGVO, Schwachstellenanalyse, Härtung von Systemen"
+                   data-en="Information Security, GDPR, Vulnerability Analysis, System Hardening"
+                   data-tr="Bilgi Güvenliği, KVKK/GDPR, Zafiyet Analizi, Sistem Sertleştirme">
+                   Informationssicherheit, DSGVO, Schwachstellenanalyse, Systemhärtung
+                </p>
+            </div>
+
+            <!-- 4. Automation & Scripting -->
+            <div class="skill-card"
+                style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border: 1px solid rgba(46, 204, 113, 0.2); border-radius: 12px;">
+                <h3 class="lang" data-de="Skripting & Datenbanken" data-en="Scripting & Databases" data-tr="Betik ve Veritabanı">Skripting & Datenbanken</h3>
+                <p>PowerShell, Bash, SQL (MySQL/MariaDB), HTML/CSS Basics</p>
+            </div>
+
+            <!-- 5. Virtualization & Cloud -->
+            <div class="skill-card"
+                style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border: 1px solid rgba(46, 204, 113, 0.2); border-radius: 12px;">
+                <h3 class="lang" data-de="Virtualisierung & Cloud" data-en="Virtualization & Cloud" data-tr="Sanallaştırma ve Bulut">Virtualisierung & Cloud</h3>
+                <p>VMware vSphere, Hyper-V, Docker, Cloud-Grundlagen</p>
+            </div>
+
+            <!-- 6. Hardware & Project Management -->
+            <div class="skill-card"
+                style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border: 1px solid rgba(46, 204, 113, 0.2); border-radius: 12px;">
+                <h3 class="lang" data-de="Support & Organisation" data-en="Support & Organization" data-tr="Destek ve Organizasyon">Support & Organisation</h3>
+                <p class="lang" 
+                   data-de="Troubleshooting, Hardware-Wartung, ITIL / Qualitätsmanagement, Projektarbeit"
+                   data-en="Troubleshooting, Hardware Maintenance, ITIL / Quality Management, Project Work"
+                   data-tr="Sorun Giderme, Donanım Bakımı, ITIL / Kalite Yönetimi, Proje Yönetimi">
+                   Troubleshooting, Hardware-Wartung, Qualitätsmanagement, Basis-Projektmanagement
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+   
+    <section id="lebenslauf">
+        <div class="content-card">
+            <h2 class="lang" data-de="Werdegang" data-en="Professional Experience" data-tr="Kariyer Geçmişi">
+                <i class="fas fa-history"></i> Werdegang
+            </h2>
+
+            <!-- Timeline Item: Umschulung WBS Training -->
+            <div class="timeline-item">
+                <span style="color: var(--primary); font-weight: bold;">07/2025 – 07/2027</span>
+                <h3 class="lang" data-de="Umschulung zur Fachinformatikerin für Systemintegration" 
+                    data-en="Retraining as IT Specialist for System Integration" 
+                    data-tr="Sistem Entegrasyonu Uzmanlığı Yeniden Eğitimi">Umschulung zur Fachinformatikerin für Systemintegration</h3>
+                <p style="font-style: italic; color: #aaa; margin-top: -5px;">WBS Training</p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+                    <li><i class="fas fa-graduation-cap" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" 
+                            data-de="Vertiefung in Netzwerkinfrastruktur, Systemadministration und IT-Sicherheit"
+                            data-en="Specialization in network infrastructure, system administration, and IT security"
+                            data-tr="Ağ altyapısı, sistem yönetimi ve siber güvenlik alanlarında uzmanlaşma">Vertiefung in Netzwerkinfrastruktur, Systemadministration und IT-Sicherheit</span>
+                    </li>
+                    <li><i class="fas fa-certificate" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" 
+                            data-de="Vorbereitung auf den IHK-Abschluss im Sommer 2027"
+                            data-en="Preparation for the IHK qualification exam in summer 2027"
+                            data-tr="Yaz 2027 IHK bitirme sınavına hazırlık">Vorbereitung auf den IHK-Abschluss im Sommer 2027</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Timeline Item: Praktikum KRZN -->
+            <div class="timeline-item">
+                <span style="color: var(--primary); font-weight: bold;">08/2026 – 03/2027</span>
+                <h3 class="lang" data-de="Praktikantin IT-Systemintegration" 
+                    data-en="IT System Integration Intern" 
+                    data-tr="Sistem Entegrasyonu Stajyeri">Praktikantin IT-Systemintegration</h3>
+                <p style="font-style: italic; color: #aaa; margin-top: -5px;">Kommunales Rechenzentrum Niederrhein (KRZN, Kamp-Lintfort)</p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+                    <li><i class="fas fa-school" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" 
+                            data-de="Zukünftiger Einsatz im Bereich Schul-IT und digitale Bildungsinfrastruktur"
+                            data-en="Future deployment in school IT and digital educational infrastructure"
+                            data-tr="Okul bilişim teknolojileri ve dijital eğitim altyapısı alanında görev">Zukünftiger Einsatz im Bereich Schul-IT und digitale Bildungsinfrastruktur</span>
+                    </li>
+                    <li><i class="fas fa-server" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" 
+                            data-de="Betreuung von Schulnetzwerken und First/Second-Level-Support im kommunalen Umfeld"
+                            data-en="Support of school networks and first/second-level support in municipal environment"
+                            data-tr="Belediye bünyesinde okul ağlarının bakımı ve 1./2. seviye teknik destek">Betreuung von Schulnetzwerken und First/Second-Level-Support im kommunalen Umfeld</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <span style="color: var(--primary); font-weight: bold;">05/2023 - 05/2025</span>
+                <h3 class="lang" data-de="Teamassistentin" data-en="Team Assistant" data-tr="Takım Asistanı">Teamassistentin</h3>
+                <p style="font-style: italic; color: #aaa; margin-top: -5px;">Corendon Touristik GmbH</p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+                    <li><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Verantwortung für das Finanz- & Mahnwesen"
+                            data-en="Responsibility for finance & dunning processes"
+                            data-tr="Finans ve İhbar/Takip İşlemlerinin Sorumluluğu">Verantwortung für das Finanz- & Mahnwesen</span>
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Management der Informations- & Dokumentenlogistik"
+                            data-en="Management of information & document logistics"
+                            data-tr="Bilgi ve Belge Lojistiği Yönetimi">Management der Informations- & Dokumentenlogistik</span>
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Datenpflege & Erstellung von Lohn- und Zeitberichten"
+                            data-en="Data maintenance & preparation of payroll and time reports"
+                            data-tr="Veri Yönetimi, Maaş ve Çalışma Süresi Raporlarının Hazırlanması">Datenpflege & Erstellung von Lohn- und Zeitberichten</span>
+                    </li>
+                    <li><i class="fas fa-check" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Organisation der internen/externen Korrespondenz"
+                            data-en="Organization of internal/external correspondence"
+                            data-tr="Kurum İçi ve Kurum Dışı Yazışmaların Organizasyonu">Organisation der internen/externen Korrespondenz</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <span style="color: var(--primary); font-weight: bold;">09/2022 – 04/2023</span>
+                <h3 class="lang" data-de="Bodenstewardess" data-en="Ground Stewardess" data-tr="Yer Hizmetleri Görevlisi (Bodenstewardess)">Bodenstewardess</h3>
+                <p style="font-style: italic; color: #aaa; margin-top: -5px;">Airline Assistance Switzerland (Düsseldorf Airport)</p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+                    <li><i class="fas fa-plane-arrival" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang"
+                            data-de="Validierung von Reisedokumenten unter Einhaltung internationaler Compliance"
+                            data-en="Validation of travel documents in compliance with international regulations"
+                            data-tr="Uluslararası Uyumluluk Kurallarına Göre Seyahat Belgelerinin Doğrulanması">Validierung von Reisedokumenten unter Einhaltung internationaler Compliance</span>
+                    </li>
+                    <li><i class="fas fa-desktop" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Systemgestützte Abfertigungsprozesse nach Airline-Richtlinien"
+                            data-en="System-based handling processes according to airline guidelines"
+                            data-tr="Havayolu Kurallarına Uygun Sistem Destekli Yolcu Kabul (Check-in) İşlemleri">Systemgestützte Abfertigungsprozesse nach Airline-Richtlinien</span>
+                    </li>
+                    <li><i class="fas fa-sync-alt" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Datenmanagement sowie prozessorientiertes Buchen und Umbuchen"
+                            data-en="Data management and process-oriented booking and rebooking"
+                            data-tr="Veri Yönetimi ile Süreç Odaklı Rezervasyon ve Bilet Değişim İşlemleri">Datenmanagement sowie prozessorientiertes Buchen und Umbuchen</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <span style="color: var(--primary); font-weight: bold;">05/2019 – 09/2019</span>
+                <h3 class="lang" data-de="Servicekraft für Administration & Empfang"
+                    data-en="Service Staff for Administration & Reception"
+                    data-tr="Resepsiyon ve İdari İşler Sorumlusu">Servicekraft für Administration & Empfang</h3>
+                <p style="font-style: italic; color: #aaa; margin-top: -5px;">My Wellness (Köln)</p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+                    <li><i class="fas fa-tasks" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang"
+                            data-de="Strukturierte Erledigung administrativer Aufgaben im operativen Betrieb"
+                            data-en="Structured completion of administrative tasks in operational business"
+                            data-tr="Operatif Faaliyetlerde İdari Görevlerin Düzenli Şekilde Yürütülmesi">Strukturierte Erledigung administrativer Aufgaben im operativen Betrieb</span>
+                    </li>
+                    <li><i class="fas fa-calendar-alt" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Effiziente Terminorganisation und Ressourcenkoordination"
+                            data-en="Efficient appointment scheduling and resource coordination"
+                            data-tr="Etkin Randevu Organizasyonu ve Kaynak Koordinasyonu">Effiziente Terminorganisation und Ressourcenkoordination</span>
+                    </li>
+                    <li><i class="fas fa-cash-register" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Sorgfältige Abwicklung des Zahlungsverkehrs und Kassenführung"
+                            data-en="Careful processing of payment transactions and cash management"
+                            data-tr="Ödeme İşlemlerinin Titizlikle Takibi ve Kasa Yönetimi">Sorgfältige Abwicklung des Zahlungsverkehrs und Kassenführung</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <span style="color: var(--primary); font-weight: bold;">08/2017 – 12/2018</span>
+                <h3 class="lang" data-de="Ausbildung zur Med. Fachangestellten (o.A.)"
+                    data-en="Medical Assistant Training (inc.)"
+                    data-tr="Tıbbi Sekreterlik ve Asistanlık Eğitimi (Tamamlanmadı)">Ausbildung zur Med. Fachangestellten (o.A.)</h3>
+                <p style="font-style: italic; color: #aaa; margin-top: -5px;">Praxisklinik im Südpark (Solingen)</p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+                    <li><i class="fas fa-microscope" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <strong class="lang" data-de="OP-Assistenz (Springer):" data-en="OR Assistance:" data-tr="Ameliyathane Asistanlığı (Steril Olmayan Yardımcı):">OP-Assistenz (Springer):</strong>
+                        <span class="lang"
+                            data-de="Höchste Konzentration bei der Vorbereitung medizinischer Ressourcen."
+                            data-en="High level of concentration in the preparation of medical resources."
+                            data-tr="Tıbbi kaynakların hazırlanmasında yüksek konsantrasyon ve titizlik.">Höchste Konzentration bei der Vorbereitung medizinischer Ressourcen.</span>
+                    </li>
+                    <li><i class="fas fa-file-medical" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <strong class="lang" data-de="Dokumentationsmanagement:" data-en="Documentation Management:" data-tr="Dokümantasyon Yönetimi:">Dokumentationsmanagement:</strong>
+                        <span class="lang"
+                            data-de="Vorbereitung von Gesprächen unter Berücksichtigung von Schweigepflicht & DSGVO."
+                            data-en="Preparation of consultations considering confidentiality & GDPR."
+                            data-tr="Hasta gizliliği ve KVKK (DSGVO) ilkelerine uygun olarak görüşmelerin hazırlanması.">Vorbereitung von Gesprächen unter Berücksichtigung von Schweigepflicht & DSGVO.</span>
+                    </li>
+                </ul>
+            </div>
+
+             <div class="timeline-item">
+                <span style="color: var(--primary); font-weight: bold;">10/2016 – 03/2017</span>
+                <h3 class="lang" data-de="Verkaufsberaterin" data-en="Sales Consultant" data-tr="Satış Danışmanı">Verkaufsberaterin</h3>
+                <p style="font-style: italic; color: #aaa; margin-top: -5px;">Müller Ltd. & Co. KG (Wuppertal)</p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+                    <li><i class="fas fa-boxes" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang"
+                            data-de="Strukturierte Bestandsführung und Qualitätssicherung der Warenpräsentation"
+                            data-en="Structured inventory management and quality assurance of product presentation"
+                            data-tr="Düzenli Stok Takibi ve Ürün Sunumunda Kalite Güvencesi">Strukturierte Bestandsführung und Qualitätssicherung der Warenpräsentation</span>
+                    </li>
+                    <li><i class="fas fa-clipboard-check" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang"
+                            data-de="Inventurmanagement sowie bedarfsgerechte Bedarfsanalyse und Nachbestellung"
+                            data-en="Inventory management as well as demand analysis and reordering"
+                            data-tr="Envanter Yönetimi, İhtiyaç Analizi ve Ürün Sipariş Süreçleri">Inventurmanagement sowie bedarfsgerechte Bedarfsanalyse und Nachbestellung</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <span style="color: var(--primary); font-weight: bold;">08/2015 – 07/2017</span>
+                <h3 class="lang" data-de="Höhere Berufsfachschule Wirtschaft & Verwaltung"
+                    data-en="Higher Vocational School for Business & Admin"
+                    data-tr="Yüksek Meslek Yüksekokulu - Ekonomi ve Yönetim">Höhere Berufsfachschule Wirtschaft & Verwaltung</h3>
+                <p style="font-style: italic; color: #aaa; margin-top: -5px;">Berufskolleg Hilden</p>
+
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+                    <li><i class="fas fa-calculator" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Erwerb fundierter Kenntnisse in betriebswirtschaftlichen Abläufen"
+                            data-en="Acquisition of sound knowledge in business processes"
+                            data-tr="İşletme süreçleri ve ticari işleyiş hakkında kapsamlı bilgi edinimi">Erwerb fundierter Kenntnisse in betriebswirtschaftlichen Abläufen</span>
+                    </li>
+                    <li><i class="fas fa-file-invoice" style="color: var(--primary); font-size: 0.8rem;"></i>
+                        <span class="lang" data-de="Grundlagen der Büroorganisation und kaufmännischen Steuerung"
+                            data-en="Basics of office organization and commercial management"
+                            data-tr="Ofis organizasyonu ve ticari yönetim temelleri">Grundlagen der Büroorganisation und kaufmännischen Steuerung</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="Umschulung">
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>
+                    🎓
+                    <span class="lang" data-de="Aktuelle Umschulung" data-en="Current Retraining" data-tr="Mevcut Mesleki Eğitim (Umschulung)">
+                        Aktuelle Umschulung
+                    </span>
+                </h3>
+                <strong>WBS Training AG</strong><br>
+                <span class="lang" data-de="Fachinformatiker für Systemintegration" data-en="IT Specialist for System Integration" data-tr="Sistem Entegrasyonu Uzmanı">
+                    Fachinformatiker für Systemintegration
+                </span>
+                <br>
+                <span class="lang" data-de="Seit Juli 2025" data-en="Since July 2025" data-tr="Temmuz 2025'ten Beri">
+                    Seit Juli 2025
+                </span>
+            </div>
+
+            <div class="skill-card">
+                <h3>
+                    💼
+                    <span class="lang" data-de="Praktikum" data-en="Internship" data-tr="Staj">
+                        Praktikum
+                    </span>
+                </h3>
+                <strong>Kommunales Rechenzentrum Niederrhein</strong><br>
+                <span class="lang" data-de="Client-Administration" data-en="Client Administration" data-tr="İstemci (Client) Yönetimi">
+                    Client-Administration
+                </span>
+                <br>
+                <span class="lang" data-de="Netzwerk-Monitoring" data-en="Network Monitoring" data-tr="Ağ İzleme (Network Monitoring)">
+                    Netzwerk-Monitoring
+                </span>
+            </div>
+
+            <div class="skill-card">
+                <h3>
+                    📜
+                    <span class="lang" data-de="Zertifikate" data-en="Certificates" data-tr="Sertifikalar">
+                        Zertifikate
+                    </span>
+                </h3>
+                <strong>
+                    <span class="lang" data-de="Fachfrau für Projektmanagement (FPM)" data-en="Project Management Specialist (FPM)" data-tr="Proje Yönetim Uzmanı (FPM)">
+                        Fachfrau für Projektmanagement (FPM)
+                    </span>
+                </strong>
+                <br>
+                <span class="lang" data-de="✔ Erfolgreich abgeschlossen" data-en="✔ Successfully completed" data-tr="✔ Başarıyla Tamamlandı">
+                    ✔ Erfolgreich abgeschlossen
+                </span>
+                <br>
+                <a href="Toprak_Sidal_FPM_Zertifikat_12_22.pdf" target="_blank">
+                    📄
+                    <span class="lang" data-de="Zertifikat ansehen" data-en="View certificate" data-tr="Sertifikayı Görüntüle">
+                        Zertifikat ansehen
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projekte">
+        <div class="content-card" style="border: 2px solid var(--primary);">
+            <h2 class="lang" data-de="IHK-Abschlussprojekt" data-en="IHK Final Project" data-tr="IHK Bitirme Projesi">IHK-Abschlussprojekt</h2>
+
+            <div style="background: rgba(46, 204, 113, 0.1); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                <span class="badge lang" data-de="IN UMSETZUNG (40 STUNDEN)" data-en="IN PROGRESS (40 HOURS)" data-tr="UYGULAMA SÜRECİNDE (40 SAAT)">IN UMSETZUNG (40 STUNDEN)</span>
+
+                <h3 class="lang" style="margin-top: 10px;" data-de="Implementierung einer Monitoring-Lösung" data-en="Implementation of a Monitoring Solution" data-tr="Bir İzleme (Monitoring) Çözümünün Kurulması">
+                    Implementierung einer Monitoring-Lösung
+                </h3>
+
+                <p class="lang"
+                    data-de="Aufbau eines Zabbix- oder Checkmk-Servers zur proaktiven Überwachung der IT-Infrastruktur (Server, Switche, USV) einer Schule."
+                    data-en="Setting up a Zabbix or Checkmk server for proactive monitoring of the IT infrastructure (servers, switches, UPS) of a school."
+                    data-tr="Bir okulun BT altyapısının (sunucular, ağ anahtarları, kesintisiz güç kaynakları) proaktif olarak izlenmesi için Zabbix veya Checkmk sunucusunun kurulması.">
+                    Aufbau eines Zabbix- oder Checkmk-Servers zur proaktiven Überwachung der IT-Infrastruktur (Server, Switche, USV) einer Schule.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="skill-card"
+                    style="border-left: 3px solid var(--primary); background: rgba(255,255,255,0.03); padding: 15px;">
+                    <h4 style="margin: 0 0 10px 0;"><i class="fas fa-search"></i> <span class="lang"
+                            data-de="1. Analyse & Planung" data-en="1. Analysis & Planning" data-tr="1. Analiz & Planlama">1. Analyse & Planung</span>
+                    </h4>
+                    <ul style="font-size: 0.8rem; padding-left: 15px; margin: 0; list-style-type: none;">
+                        <li class="lang" data-de="• Ist-Analyse der Hardware" data-en="• As-is analysis of hardware" data-tr="• Donanımın Mevcut Durum Analizi">• Ist-Analyse der Hardware</li>
+                        <li class="lang" data-de="• Soll-Konzept & Anforderungen" data-en="• Target concept & requirements" data-tr="• Hedef Konsept ve Gereksinimler">• Soll-Konzept & Anforderungen</li>
+                        <li class="lang" data-de="• Wirtschaftlichkeitsanalyse" data-en="• Economic feasibility analysis" data-tr="• Maliyet ve Verimlilik Analizi">• Wirtschaftlichkeitsanalyse</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card"
+                    style="border-left: 3px solid var(--primary); background: rgba(255,255,255,0.03); padding: 15px;">
+                    <h4 style="margin: 0 0 10px 0;"><i class="fas fa-cogs"></i> <span class="lang"
+                            data-de="2. Realisierung" data-en="2. Implementation" data-tr="2. Uygulama ve Kurulum">2. Realisierung</span></h4>
+                    <ul style="font-size: 0.8rem; padding-left: 15px; margin: 0; list-style-type: none;">
+                        <li class="lang" data-de="• Installation OS & Software" data-en="• OS & Software installation" data-tr="• İşletim Sistemi ve Yazılım Kurulumu">• Installation OS & Software</li>
+                        <li class="lang" data-de="• Host-Anbindung via SNMP" data-en="• Host connection via SNMP" data-tr="• SNMP Üzerinden Cihaz Bağlantıları">• Host-Anbindung via SNMP</li>
+                        <li class="lang" data-de="• Schwellenwerte & Alarmierung" data-en="• Thresholds & Alerting" data-tr="• Eşik Değerleri ve Uyarı Sistemleri">• Schwellenwerte & Alarmierung</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card"
+                    style="border-left: 3px solid var(--primary); background: rgba(255,255,255,0.03); padding: 15px;">
+                    <h4 style="margin: 0 0 10px 0;"><i class="fas fa-vial"></i> <span class="lang"
+                            data-de="3. Kontrolle & Abschluss" data-en="3. Quality Control & Completion" data-tr="3. Kontrol & Kapanış">3. Kontrolle & Abschluss</span></h4>
+                    <ul style="font-size: 0.8rem; padding-left: 15px; margin: 0; list-style-type: none;">
+                        <li class="lang" data-de="• Funktionstests (Simulation)" data-en="• Functional tests (Simulation)" data-tr="• Fonksiyon Testleri (Simülasyon)">• Funktionstests (Simulation)</li>
+                        <li class="lang" data-de="• Soll-Ist-Vergleich" data-en="• Target/Actual comparison" data-tr="• Hedef ve Gerçekleşen Durum Karşılaştırması">• Soll-Ist-Vergleich</li>
+                        <li class="lang" data-de="• Projektdokumentation (10h)" data-en="• Project documentation (10h)" data-tr="• Proje Dokümantasyonu (10 Saat)">• Projektdokumentation (10h)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card"
+                    style="border-left: 3px solid var(--primary); background: rgba(255,255,255,0.03); padding: 15px;">
+                    <h4 style="margin: 0 0 10px 0;"><i class="fas fa-eye"></i> <span class="lang" data-de="Zielsetzung" data-en="Objective" data-tr="Hedef">Zielsetzung</span></h4>
+                    <p class="lang" style="font-size: 0.8rem; margin: 0;"
+                        data-de="Sicherstellung der Hochverfügbarkeit, damit Ausfälle (z.B. Switche) sofort erkannt werden."
+                        data-en="Ensuring high availability so that failures (e.g., switches) are detected immediately."
+                        data-tr="Arızaların (örneğin ağ anahtarları) anında tespit edilmesi ve sistemin yüksek kullanılabilirliğinin (High Availability) sağlanması.">
+                        Sicherstellung der Hochverfügbarkeit, damit Ausfälle (z.B. Switche) sofort erkannt werden.
+                    </p>
+                </div>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #aaa; text-align: center;">
+                <i class="fas fa-clock"></i> <span class="lang" data-de="Gesamtprojektzeit: 40 Stunden" data-en="Total project time: 40 hours" data-tr="Toplam Proje Süresi: 40 Saat">Gesamtprojektzeit: 40 Stunden</span>
+            </p>
+        </div>
+    </section>
+
+   <section id="interessen">
+    <div class="content-card">
+        <h2 class="lang" data-de="Interessen & Leidenschaften" data-en="Interests & Passions" data-tr="İlgi Alanları & Hobiler">
+            <i class="fas fa-heart"></i> Interessen & Leidenschaften
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 20px;">
+            
+            <!-- Hardware & Basteln -->
+            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+                <i class="fas fa-microchip" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                <h4 class="lang" style="margin: 5px 0;" data-de="Hardware & Modding" data-en="Hardware & Modding" data-tr="Donanım & Modifikasyon">Hardware & Modding</h4>
+                <p class="lang" style="font-size: 0.8rem; color: var(--text);"
+                    data-de="Leidenschaft für PC-Komponenten, eigene Builds und das Tüfteln an Hardware."
+                    data-en="Passion for PC components, custom builds, and tinkering with hardware."
+                    data-tr="Bilgisayar parçalarına merak, kendi sistemlerimi toplama ve donanım kurcalama sevgisi.">
+                    Leidenschaft für PC-Komponenten, eigene Builds und das Tüfteln an Hardware.
+                </p>
+            </div>
+
+            <!-- IT-Sicherheit -->
+            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+                <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                <h4 class="lang" style="margin: 5px 0;" data-de="IT-Sicherheit" data-en="IT Security" data-tr="Siber Güvenlik">IT-Sicherheit</h4>
+                <p class="lang" style="font-size: 0.8rem; color: var(--text);"
+                    data-de="Faszination für Cyber Security, neue Tech-Trends und IT-Sicherheitsnews."
+                    data-en="Fascination with cyber security, tech trends, and security news."
+                    data-tr="Siber güvenlik dünyası, teknoloji trendleri ve güvenlik haberlerine ilgi.">
+                    Faszination für Cyber Security, neue Tech-Trends und IT-Sicherheitsnews.
+                </p>
+            </div>
+
+            <!-- Kochen & Backen -->
+            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+                <i class="fas fa-utensils" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                <h4 class="lang" style="margin: 5px 0;" data-de="Kochen & Backen" data-en="Cooking & Baking" data-tr="Yemek Yapma & Hamur İşleri">Kochen & Backen</h4>
+                <p class="lang" style="font-size: 0.8rem; color: var(--text);"
+                    data-de="Ausprobieren neuer Rezepte, gutes Essen genießen und Entspannung in der Küche."
+                    data-en="Trying out new recipes, enjoying good food, and relaxing in the kitchen."
+                    data-tr="Yeni tarifler denemek, lezzetli yemekler hazırlamak ve mutfakta vakit geçirmek.">
+                    Ausprobieren neuer Rezepte, gutes Essen genießen und Entspannung in der Küche.
+                </p>
+            </div>
+
+            <!-- Gaming -->
+            <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+                <i class="fas fa-gamepad" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                <h4 class="lang" style="margin: 5px 0;" data-de="Gaming" data-en="Gaming" data-tr="Oyun (Gaming)">Gaming</h4>
+                <p class="lang" style="font-size: 0.8rem; color: var(--text);"
+                    data-de="Entspannter Ausgleich durch Story-Games, Strategiespiele und Runden mit Freunden."
+                    data-en="Relaxing through story-driven games, strategy games, and playing with friends."
+                    data-tr="Hikaye tabanlı oyunlar, strateji ve arkadaşlarla oyun oynayarak kafa dağıtma.">
+                    Entspannter Ausgleich durch Story-Games, Strategiespiele und Runden mit Freunden.
+                </p>
+            </div>
+
+      <div style="text-align: center; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 15px;">
+                <i class="fas fa-book-open-reader" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                <h4 class="lang" style="margin: 5px 0;" data-de="Lesen" data-en="Reading" data-tr="Kitap Okuma">Lesen</h4>
+                <p class="lang" style="font-size: 0.8rem; color: var(--text);"
+                    data-de="Lese gerne Dark-Romance-Bücher sowie religiöse und spirituelle Lektüre."
+                    data-en="Enjoy reading dark romance books as well as religious and spiritual literature."
+                    data-tr="Dark Romance kitapları ile dini ve manevi eserler okumayı severim.">
+                    Lese gerne Dark-Romance-Bücher sowie religiöse und spirituelle Lektüre.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="kontakt">
+        <div class="content-card">
+            <h2 class="lang" data-de="Kontakt" data-en="Contact" data-tr="İletişim">Kontakt</h2>
+            <p class="lang" data-de="Ich freue mich auf Ihre Nachricht!" data-en="I look forward to your message!" data-tr="Mesajınızı bekliyorum!">Ich freue mich auf Ihre Nachricht!</p>
+            <div style="margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <a href="mailto:sidaltoprak624@gmail.com" class="btn"
+                    style="background: var(--primary); color: #1a1a2e;">
+                    <i class="fas fa-envelope"></i> E-Mail
+                </a>
+                <a href="https://www.linkedin.com/in/sidal-toprak" target="_blank" class="btn"
+                    style="background: #0077b5; color: white;">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Sidal Toprak | Fachinformatikerin für Systemintegration i.A.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+        }
+
+        // Sprach-Logik
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('.lang');
+            elements.forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.innerText = text;
+            });
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        // Sprache beim Laden wiederherstellen
+        window.onload = () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'de';
+            changeLanguage(savedLang);
+        };
+    </script>
+</body>
+</html>
